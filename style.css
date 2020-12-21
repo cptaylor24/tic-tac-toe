@@ -78,3 +78,8 @@ ol li {
     align-items: center;
 }
 
+.jsHover:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
