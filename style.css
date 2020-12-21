@@ -39,17 +39,15 @@ ol li {
     margin: 3px;
 }
 
-#gameboard-container {
-    border-style: solid;
-    border-color: white;
-}
 
 .gameboard {
-    background-color: teal;
+    background-color: #39FF14;
     height: 600px;
     width: 600px;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    column-gap: 2px;
+    row-gap: 2px;
     margin: 0 auto;
 }
 
