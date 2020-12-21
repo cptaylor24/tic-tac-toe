@@ -1,6 +1,6 @@
 /* Initialize DOM components */
 const board = document.getElementById('gameboard');
-const message_div = document.getElementById('message');
+const message_this = document.getElementById('message');
 const reset = document.getElementById('btnReset');
 
 const spot0 = document.getElementById('0');
@@ -40,16 +40,16 @@ const field = (() => {
                 let spot = allSpots[i][j];
                 spot.classList.add('jsHover');
                 spot.dataset.choice = 0;
-                spot.addEventListener('click', (Event) => updateGame(spot), {once: true});
+                spot.addEventListener('click', updateGame.bind(spot, spot), {once: true});
             }
         }
                 
     }
-    function updateGame(div) {
-        div.textContent = "X";
-        console.log("You clicked " + div.id);
-        div.classList.remove('jsHover');
-        div.dataset.choice = 1;
+    function updateGame() {
+        this.textContent = "X";
+        console.log("You clicked " + this.id);
+        this.classList.remove('jsHover');
+        this.dataset.choice = 1;
         console.log(checkBoard());
     }
 
@@ -58,11 +58,12 @@ const field = (() => {
         for(let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 let spot = allSpots[i][j];
+                if (spot.textContent !== "") {
+                    spot.addEventListener('click', updateGame.bind(spot, spot), {once: true});
+                }
                 spot.textContent = "";
                 spot.classList.add('jsHover');
-                spot.dataset.choice = 0;
-                spot.removeEventListener('click', (Event) => updateGame(spot), {once: true});
-                spot.addEventListener('click', (Event) => updateGame(spot), {once: true});
+                spot.dataset.choice = 0;                
             }
         }
     }
