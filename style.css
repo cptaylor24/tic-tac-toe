@@ -17,7 +17,7 @@
     justify-content: space-evenly;
 }
 
-.rules-container {
+.interface-container {
     color: #39FF14;
 }
 
@@ -38,7 +38,27 @@
 ol li {
     margin: 3px;
 }
+#btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
 
+#btnReset {
+    background-color: black;
+    height: 60px;
+    width: 150px;
+    font-size: 30px;
+    color: #39FF14;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#message {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
 
 .gameboard {
     background-color: #39FF14;
