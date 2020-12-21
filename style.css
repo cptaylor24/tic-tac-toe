@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+.title {
+    color: #39FF14;
+    padding: 25px;
+    font-size: 100px;
+    text-align: center;
+}
+
+#main-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rules-container {
+    color: #39FF14;
+}
+
+.rules-title {
+    font-size: 55px;
+    text-align: center;
+    border-style: solid;
+    border-color: transparent transparent #39FF14 transparent;
+    padding: 5px;
+    margin: 10px;
+}
+
+.rules-list {
+    font-size: 25px;
+    list-style-position: inside;
+}
+
+ol li {
+    margin: 3px;
+}
+
+#gameboard-container {
+    border-style: solid;
+    border-color: white;
+}
+
+.gameboard {
+    background-color: teal;
+    height: 600px;
+    width: 600px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    margin: 0 auto;
+}
+
+.space {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
